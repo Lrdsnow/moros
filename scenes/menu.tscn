@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/menu.gd" type="Script" id=1]
+
+[node name="Control" type="Control" groups=[
+"Persist",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="display" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Control" parent="display"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="new" type="Button" parent="display/menu"]
+margin_left = 368.0
+margin_top = 387.204
+margin_right = 645.0
+margin_bottom = 414.204
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="display/menu"]
+margin_top = 152.0
+margin_right = 1021.0
+margin_bottom = 233.0
+text = "Moros "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
