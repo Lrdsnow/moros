@@ -1,6 +1,8 @@
 # Moros
  Moros For PC and Mobile
 
+PRE_ALPHA 
+
 Mobile: Android
 
 Consoles: Nivida Sheild (android)
