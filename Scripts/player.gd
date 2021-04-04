@@ -1,13 +1,15 @@
 extends KinematicBody2D
 
-export (int) var speed = 500
-export (int) var jump_speed = -900
-export (int) var gravity = 2500
+export (int) var speed = 350
+export (int) var jump_speed = -1500
+export (int) var gravity = 5500
+export (int) var slope_stop_min_velocity = 0
 
 var velocity = Vector2.ZERO
 
 func _on_KinematicBody2D_body_entered(_CollisionShape2D):
 	var change = "res://scenes/main.tscn"
+# warning-ignore:return_value_discarded
 	get_tree().change_scene(change)
 	print('')
 	
@@ -39,3 +41,40 @@ func get_input():
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
 		velocity.x = lerp(velocity.x, 0, friction)
+
+
+func _on_Water_area_entered(area):
+	speed = 150
+	gravity = 2000
+	jump_speed = -500
+
+
+func _on_Water_area_exited(area):
+	speed = 350
+	gravity = 5500
+	jump_speed = -1500
+
+
+func _on_float_area_entered(area):
+	gravity = -5500
+	jump_speed = 1500
+
+
+func _on_fall_area_entered(area):
+	gravity = 5500
+	jump_speed = -1500
+
+
+func _on_Dead3_area_entered(area):
+	var ded = "res://scenes/Dead.tscn"
+	get_tree().change_scene(ded)
+
+
+func _on_Dead2_area_entered(area):
+	var ded = "res://scenes/Dead.tscn"
+	get_tree().change_scene(ded)
+
+
+func _on_Dead_area_entered(area):
+	var ded = "res://scenes/Dead.tscn"
+	get_tree().change_scene(ded)
