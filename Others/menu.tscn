@@ -1,0 +1,220 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://materials/wooden_floor/wooden_floor_n.jpg" type="Texture" id=1]
+[ext_resource path="res://entities/Desk/wood/wood_n.jpg" type="Texture" id=2]
+[ext_resource path="res://materials/wooden_floor/wooden_floor_d.jpg" type="Texture" id=3]
+[ext_resource path="res://entities/Desk/wood/wood_d.jpg" type="Texture" id=4]
+[ext_resource path="res://entities/room_01/room_01.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Scripts/menu.gd" type="Script" id=6]
+[ext_resource path="res://Tilesheet/Exit2.png" type="Texture" id=7]
+[ext_resource path="res://Tilesheet/Settings3.png" type="Texture" id=8]
+[ext_resource path="res://Tilesheet/Settings4.png" type="Texture" id=9]
+[ext_resource path="res://Tilesheet/Settings2.png" type="Texture" id=10]
+[ext_resource path="res://Tilesheet/play3.png" type="Texture" id=11]
+[ext_resource path="res://PICS/Icon (1).png" type="Texture" id=12]
+[ext_resource path="res://Tilesheet/Exit3.png" type="Texture" id=13]
+[ext_resource path="res://Tilesheet/Exit1.png" type="Texture" id=14]
+[ext_resource path="res://Tilesheet/Settings1.png" type="Texture" id=15]
+[ext_resource path="res://PICS/Icon.png" type="Texture" id=16]
+[ext_resource path="res://MorosNew.png" type="Texture" id=17]
+[ext_resource path="res://Tilesheet/play2.png" type="Texture" id=18]
+[ext_resource path="res://Tilesheet/play1.png" type="Texture" id=19]
+[ext_resource path="res://scenes/load.tscn" type="PackedScene" id=20]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 4 )
+metallic_specular = 0.0
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+uv1_scale = Vector3( 1, 1, 100 )
+uv1_triplanar = true
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.639216, 0.529412, 0.529412, 1 )
+albedo_texture = ExtResource( 3 )
+metallic_specular = 0.6
+roughness = 0.3
+normal_enabled = true
+normal_scale = 0.05
+normal_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, -5.8398, -14.9766, 8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, 14.9766, 8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 8.0938, -5.8398, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, 14.9766, -8.0938, -5.8398, 14.9766, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -8.0938, -5.8398, 14.9766, -8.0938, -5.8398, -14.9766, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 8.0938, 5.7617, -14.9766, 8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, -14.9766, -8.0938, 5.7617, -14.9766, -7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, 8.0938, 5.7617, 14.9766, -8.0938, 5.7617, 14.9766, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -8.0938, 5.7617, 14.9766, -7.7852, 5.7617, 14.7031, -8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, -14.9766, 8.0938, -5.8398, -14.9766, -8.0938, -5.8398, 14.9766, 8.0938, -5.8398, 14.9766, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, -14.7031, -7.7852, 5.7617, -14.7031, 7.7852, -5.2773, -14.7031, -7.7852, -5.2773, -14.7031, 7.7852, 5.7617, 14.7031, 7.7852, -5.2773, 14.7031, 7.7852, 5.7617, -14.7031, 7.7852, 5.7617, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, 5.7617, 14.7031, 7.7852, 5.7617, 14.7031, -7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, 5.7617, -14.7031, -7.7852, -5.2773, -14.7031, -7.7852, 5.7617, 14.7031, -7.7852, 5.7617, 14.7031, -7.7852, -5.2773, -14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, 14.7031, 7.7852, -5.2773, 14.7031, -7.7852, -5.2773, -14.7031, 7.7852, -5.2773, -14.7031 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.483239, 0.695562, 0.491112 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.483239, 0.695562, 0.491112 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Room" type="Spatial" parent="."]
+
+[node name="MeshInstance3" type="MeshInstance" parent="Room"]
+transform = Transform( 0.2, 0, 0, 0, 0.15, 0, 0, 0, 11.6375, -6, 0, 0 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="Room"]
+transform = Transform( 0.2, 0, 0, 0, 0.15, 0, 0, 0, 11.6375, 6, 0, 0 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="Room"]
+transform = Transform( -8.74228e-09, 0, 5.81875, 0, 0.15, 0, -0.2, 0, -2.54346e-07, -4.95985e-07, 0, -11.3468 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="Room"]
+transform = Transform( -8.74228e-09, 0, 5.81875, 0, 0.15, 0, -0.2, 0, -2.54346e-07, 4.93028e-07, 0, 11.2792 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="floor" type="MeshInstance" parent="Room"]
+transform = Transform( 6.05, 0, 0, 0, 0.05, 0, 0, 0, 11.25, 0, -0.0426321, 0 )
+visible = false
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="ceiling" type="MeshInstance" parent="Room"]
+transform = Transform( -6.16583, 8.74228e-08, 0, -5.39034e-07, -1, 0, 0, 0, 11.6728, -0.00774586, 8.48176, -0.0179863 )
+cast_shadow = 0
+use_in_baked_light = true
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="room" type="MeshInstance" parent="Room"]
+transform = Transform( 0.765425, 0, 0, 0, 0.765425, 0, 0, 0, 0.765425, 0.00865186, 4.04355, -0.0459298 )
+mesh = ExtResource( 5 )
+material/0 = SubResource( 8 )
+material/1 = SubResource( 9 )
+
+[node name="StaticBody" type="StaticBody" parent="Room/room"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Room/room/StaticBody"]
+shape = SubResource( 10 )
+
+[node name="Ceiling_Lamp1" type="StaticBody" parent="Room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800302, 8.62056, 6.78738 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Room/Ceiling_Lamp1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.699918, 0 )
+shape = SubResource( 11 )
+
+[node name="light_1" type="OmniLight" parent="Room/Ceiling_Lamp1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800302, -2.08603, 0.0658698 )
+shadow_enabled = true
+shadow_bias = 0.14
+shadow_contact = 0.45
+omni_range = 11.5403
+
+[node name="Ceiling_Lamp2" type="StaticBody" parent="Room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0800302, 8.62056, -4.97885 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Room/Ceiling_Lamp2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.699918, 0 )
+shape = SubResource( 12 )
+
+[node name="light_2" type="OmniLight" parent="Room/Ceiling_Lamp2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0249788, -2.11305, -0.0399599 )
+shadow_enabled = true
+shadow_bias = 0.14
+shadow_contact = 0.45
+omni_range = 11.5403
+
+[node name="Control" type="Control" parent="." groups=[
+"Persist",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 957.284, 541.658 )
+scale = Vector2( 3.08984, 2.23588 )
+texture = ExtResource( 12 )
+
+[node name="Sprite2" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 968.996, 338.976 )
+scale = Vector2( 1.07625, 1.13343 )
+texture = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="Control"]
+margin_top = 14.2544
+margin_right = 40.0
+margin_bottom = 28.2544
+text = "v0.0.7"
+
+[node name="Sprite3" type="Sprite" parent="Control"]
+position = Vector2( 375.411, 225.645 )
+scale = Vector2( 1.05944, 0.880193 )
+texture = ExtResource( 17 )
+
+[node name="play" type="TextureButton" parent="Control"]
+margin_left = -17.685
+margin_top = 554.825
+margin_right = 172.315
+margin_bottom = 653.825
+rect_scale = Vector2( 3, 3 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" parent="Control" instance=ExtResource( 20 )]
+
+[node name="Settings" type="TextureButton" parent="Control"]
+margin_left = -17.685
+margin_top = 710.391
+margin_right = 172.315
+margin_bottom = 809.391
+rect_scale = Vector2( 3, 3 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="Control"]
+margin_left = -17.685
+margin_top = 792.936
+margin_right = 172.315
+margin_bottom = 891.936
+rect_scale = Vector2( 3, 3 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

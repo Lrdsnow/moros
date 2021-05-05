@@ -5,6 +5,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Placeholder",
+"speed": 5.0
+}, {
 "frames": [  ],
 "loop": true,
 "name": "StillL",
@@ -12,12 +17,12 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "WalkingR",
+"name": "JumpL",
 "speed": 5.0
 }, {
 "frames": [  ],
 "loop": true,
-"name": "JumpL",
+"name": "JumpR",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -30,14 +35,9 @@ animations = [ {
 "name": "StillR",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Placeholder",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
-"name": "JumpR",
+"name": "WalkingR",
 "speed": 5.0
 } ]
 

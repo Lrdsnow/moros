@@ -4,6 +4,6 @@ func _ready():
 	connect("body_entered", self, "_on_p_body_entered")
 
 func _on_p_body_entered(_body):
-	var cs = "res://scenes/temp.tscn"
+	var cs = "res://scenes/Dialog/1.tscn"
 # warning-ignore:return_value_discarded
 	get_tree().change_scene(cs)

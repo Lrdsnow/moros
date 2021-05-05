@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/RadMatt.3DFPP/Test_Objects/pickable/Pickable.gd" type="Script" id=1]
+
+[sub_resource type="PhysicsMaterial" id=20]
+bounce = 0.1
+
+[sub_resource type="SphereMesh" id=21]
+radial_segments = 12
+rings = 12
+
+[sub_resource type="SpatialMaterial" id=22]
+albedo_color = Color( 1, 0, 0, 1 )
+roughness = 0.0
+
+[sub_resource type="SphereShape" id=23]
+radius = 0.1
+
+[node name="plastic_ball" type="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 0.999582, -0.0288956, 0, 0.0288956, 0.999582, -2.71077, 2.10183, -1.35945 )
+mass = 10.0
+physics_material_override = SubResource( 20 )
+can_sleep = false
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.15746, 0, 0, 0, 0.15746, -4.65661e-10, 0, 4.65661e-10, 0.15746, 0, 0, 0 )
+mesh = SubResource( 21 )
+material/0 = SubResource( 22 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1.5746, 0, 0, 0, 1.5746, 0, 0, 0, 1.5746, 0, 0, 0 )
+shape = SubResource( 23 )
