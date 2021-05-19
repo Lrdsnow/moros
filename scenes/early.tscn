@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/early.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Old" type="Label" parent="."]
+margin_left = 66.5956
+margin_top = 54.7035
+margin_right = 496.596
+margin_bottom = 120.704
+text = "Old:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lev1" type="Button" parent="."]
+margin_left = 64.2172
+margin_top = 80.8661
+margin_right = 376.217
+margin_bottom = 178.866
+text = "Early 2D Lev 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lev2" type="Button" parent="."]
+margin_left = 501.845
+margin_top = 80.8661
+margin_right = 813.845
+margin_bottom = 178.866
+text = "Early 2D Lev 2"
+
+[node name="lev3" type="Button" parent="."]
+margin_left = 918.068
+margin_top = 80.8661
+margin_right = 1230.07
+margin_bottom = 178.866
+text = "Early 2D Lev 3"
+
+[node name="epic" type="Button" parent="."]
+margin_left = 1334.29
+margin_top = 73.7308
+margin_right = 1646.29
+margin_bottom = 171.731
+text = "2D Test Map (Done And Unused)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Room_03_DNU" type="Button" parent="."]
+margin_left = 61.8387
+margin_top = 233.085
+margin_right = 373.839
+margin_bottom = 331.085
+text = "3D Room_03 Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="In-Progress" type="Label" parent="."]
+margin_left = 71.3524
+margin_top = 385.303
+margin_right = 501.352
+margin_bottom = 451.303
+text = "In Progress:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Room_03" type="Button" parent="."]
+margin_left = 64.2172
+margin_top = 437.628
+margin_right = 376.217
+margin_bottom = 535.628
+text = "Dark Room?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Random Ones" type="Label" parent="."]
+margin_left = 76.1092
+margin_top = 613.631
+margin_right = 506.109
+margin_bottom = 679.631
+text = "Random Ones?:
+"
+
+[node name="CS" type="Button" parent="."]
+margin_left = 68.974
+margin_top = 665.956
+margin_right = 380.974
+margin_bottom = 763.956
+text = "Temp Carecter Select Screen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="Label" parent="."]
+margin_left = 76.1092
+margin_top = 806.912
+margin_right = 506.109
+margin_bottom = 872.912
+text = "IF YOU DO NOT WANT TO PLAY BROKEN LEVELS IT IS ADVISED YOU PRESS BACK NOW!
+"
+
+[node name="back" type="Button" parent="."]
+margin_left = 73.0
+margin_top = 843.0
+margin_right = 633.0
+margin_bottom = 1058.0
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}

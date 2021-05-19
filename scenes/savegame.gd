@@ -8,8 +8,6 @@ signal saved
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if OS.has_feature('JavaScript'):
-		JavaScript.eval("canvas.requestPointerLock()")
 	save()
 	save_game()
 
@@ -17,6 +15,7 @@ func save():
 	var save_dict = {
 		"filename" : get_filename(),
 		"parent" : get_parent().get_path(),
+		"episode" : GameData.episode
 	}
 	return save_dict
 	

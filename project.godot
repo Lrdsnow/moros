@@ -12,19 +12,26 @@ config_version=4
 
 config/name="Moros"
 config/description="A Platfomer"
-run/main_scene="res://scenes/new-menu.tscn"
+run/main_scene="res://scenes/menu.tscn"
+boot_splash/image="res://splash2.png"
 config/icon="res://128x128.png"
 config/windows_native_icon="res://moros.ico"
 
 [autoload]
 
 PlayerData="*res://Others/player_data.gd"
+GameData="*res://Others/GameData.gd"
+Settings="*res://Others/settings.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
+window/size/borderless=true
+window/size/fullscreen=true
+window/vsync/use_vsync=false
 window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 

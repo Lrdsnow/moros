@@ -1,7 +1,11 @@
 
 extends KinematicBody
 
+var lock = 0
+
 func _ready():
+	if OS.has_feature('JavaScript'):
+		JavaScript.eval("canvas.requestPointerLock()")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 signal interact
@@ -112,7 +116,6 @@ func _process_movements(delta):
 
 	var jump = Input.is_action_pressed("jump")
 	
-	var flashlight = Input.is_action_pressed("flashlight")
 
 	var sprint = Input.is_action_pressed("sprint")
 	var walk = Input.is_action_pressed("walk")
@@ -120,12 +123,6 @@ func _process_movements(delta):
 	var aim = $Yaw/Camera.get_camera_transform().basis
 
 	direction = Vector3()
-	
-	if flashlight:
-		if get_node("Yaw/Camera/flashlight").is_visible():
-			$Yaw/Camera/flashlight.hide()
-		else:
-			$Yaw/Camera/flashlight.show()
 			
 	if up:
 		direction -= aim[2]
@@ -278,10 +275,11 @@ func _apply_gravity(delta):
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		yaw = fmod(yaw - event.relative.x * view_sensitivity, 360)
-		pitch = max(min(pitch - event.relative.y * view_sensitivity, 89), -89)
-		$Yaw.rotation = Vector3(0, deg2rad(yaw), 0)
-		$Yaw/Camera.rotation = Vector3(deg2rad(pitch), 0, 0)
+		if lock == 0:
+			yaw = fmod(yaw - event.relative.x * view_sensitivity, 360)
+			pitch = max(min(pitch - event.relative.y * view_sensitivity, 89), -89)
+			$Yaw.rotation = Vector3(0, deg2rad(yaw), 0)
+			$Yaw/Camera.rotation = Vector3(deg2rad(pitch), 0, 0)
 
 
 #######################################################################################################
@@ -386,8 +384,7 @@ func _on_Area2_body_entered(body):
 
 func _on_Area3_body_entered(body):
 	if body.name == "Player":
-		var cs = "res://scenes/Room_01_Back.tscn"
-		get_tree().change_scene(cs)
+		$doortp.play("to-room00")
 
 
 func _on_DOOR_body_entered(body):
@@ -397,4 +394,24 @@ func _on_DOOR_body_entered(body):
 
 
 func _on_Room_01_saved():
-	show_message("Saved Succsefully", 1)
+	$save.show()
+	$message/Timer.set_wait_time(2)
+	$message/Timer.start()
+	yield($message/Timer, "timeout")
+	$save.hide()
+
+
+func _on_off_body_entered(body):
+	if body.name == "Player":
+		$Yaw/Camera/flashlight.hide()
+
+
+func _on_DOORHorror_body_entered(body):
+	if body.name == "Player":
+		var cs = "res://scenes/Room_02_horror.tscn"
+		get_tree().change_scene(cs)
+
+
+func _on_AnimationPlayer_animation_started(anim_name):
+	hide()
+	lock = 1

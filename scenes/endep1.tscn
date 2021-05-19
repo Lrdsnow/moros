@@ -1,0 +1,144 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://PICS/Icon.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/menu.gd" type="Script" id=2]
+[ext_resource path="res://pictures/buttons/play3.png" type="Texture" id=3]
+[ext_resource path="res://PICS/Icon (1).png" type="Texture" id=4]
+[ext_resource path="res://pictures/buttons/play1.png" type="Texture" id=5]
+[ext_resource path="res://pictures/buttons/play2.png" type="Texture" id=6]
+[ext_resource path="res://MorosNew.png" type="Texture" id=7]
+[ext_resource path="res://pictures/buttons/Extras3.png" type="Texture" id=8]
+[ext_resource path="res://pictures/buttons/Settings1.png" type="Texture" id=9]
+[ext_resource path="res://pictures/buttons/Exit3.png" type="Texture" id=10]
+[ext_resource path="res://pictures/buttons/load1.png" type="Texture" id=11]
+[ext_resource path="res://pictures/buttons/load2.png" type="Texture" id=12]
+[ext_resource path="res://pictures/buttons/Settings3.png" type="Texture" id=13]
+[ext_resource path="res://pictures/buttons/Extras.png" type="Texture" id=14]
+[ext_resource path="res://pictures/buttons/Exit1.png" type="Texture" id=15]
+[ext_resource path="res://pictures/buttons/Extras2.png" type="Texture" id=16]
+[ext_resource path="res://pictures/buttons/settings2.png" type="Texture" id=17]
+[ext_resource path="res://pictures/buttons/load3.png" type="Texture" id=18]
+[ext_resource path="res://pictures/buttons/Exit2.png" type="Texture" id=19]
+[ext_resource path="res://splash.jpg" type="Texture" id=20]
+[ext_resource path="res://scenes/splash.gd" type="Script" id=21]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Control" type="Control" groups=[
+"Persist",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 957.284, 541.658 )
+scale = Vector2( 3.08984, 2.23588 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 968.996, 338.976 )
+scale = Vector2( 1.07625, 1.13343 )
+texture = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 958.621, 544.9 )
+current = true
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 375.411, 225.645 )
+scale = Vector2( 1.05944, 0.880193 )
+texture = ExtResource( 7 )
+
+[node name="play" type="TextureButton" parent="."]
+margin_left = 2.224
+margin_top = 570.235
+margin_right = 462.224
+margin_bottom = 639.235
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="TextureButton" parent="."]
+margin_left = 2.224
+margin_top = 657.071
+margin_right = 462.224
+margin_bottom = 726.071
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="TextureButton" parent="."]
+margin_left = 2.224
+margin_top = 743.908
+margin_right = 462.224
+margin_bottom = 812.908
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="extras" type="TextureButton" parent="."]
+margin_left = 2.224
+margin_top = 828.856
+margin_right = 462.224
+margin_bottom = 897.856
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 16 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 2.22449
+margin_top = 919.468
+margin_right = 462.224
+margin_bottom = 988.468
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 19 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="splash" type="Sprite" parent="."]
+position = Vector2( 958.583, 543.272 )
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="splash" type="AnimationPlayer" parent="splash"]
+anims/fade = SubResource( 1 )
+
+[connection signal="splash" from="." to="splash" method="_on_Control_splash"]

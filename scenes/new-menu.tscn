@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://PICS/Icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/menu.gd" type="Script" id=2]
@@ -14,7 +14,29 @@
 [ext_resource path="res://Tilesheet/Settings3.png" type="Texture" id=12]
 [ext_resource path="res://Tilesheet/Exit2.png" type="Texture" id=13]
 [ext_resource path="res://scenes/load.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Tilesheet/Extras4.png" type="Texture" id=15]
+[ext_resource path="res://Tilesheet/Extras2.png" type="Texture" id=16]
+[ext_resource path="res://Tilesheet/Extras3.png" type="Texture" id=17]
 [ext_resource path="res://Tilesheet/Settings4.png" type="Texture" id=18]
+[ext_resource path="res://Tilesheet/Extras1.png" type="Texture" id=19]
+[ext_resource path="res://splash.jpg" type="Texture" id=20]
+[ext_resource path="res://scenes/splash.gd" type="Script" id=21]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Control" type="Control" groups=[
 "Persist",
@@ -69,12 +91,14 @@ __meta__ = {
 }
 
 [node name="load" parent="." instance=ExtResource( 14 )]
+margin_left = -17.685
+margin_right = 172.315
 
 [node name="Settings" type="TextureButton" parent="."]
 margin_left = -17.685
-margin_top = 710.391
+margin_top = 705.634
 margin_right = 172.315
-margin_bottom = 809.391
+margin_bottom = 804.634
 rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 12 )
@@ -84,11 +108,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="extras" type="TextureButton" parent="."]
+margin_left = -17.685
+margin_top = 779.365
+margin_right = 172.315
+margin_bottom = 878.365
+rect_scale = Vector2( 3, 3 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 16 )
+texture_disabled = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Exit" type="TextureButton" parent="."]
 margin_left = -17.685
-margin_top = 792.936
+margin_top = 864.288
 margin_right = 172.315
-margin_bottom = 891.936
+margin_bottom = 963.288
 rect_scale = Vector2( 3, 3 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
@@ -96,3 +134,12 @@ texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="splash" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 958.583, 543.272 )
+texture = ExtResource( 20 )
+script = ExtResource( 21 )
+
+[node name="splash" type="AnimationPlayer" parent="splash"]
+anims/fade = SubResource( 1 )

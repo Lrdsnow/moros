@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://PICS/Icon.png" type="Texture" id=1]
-[ext_resource path="res://Tilesheet/Back2.png" type="Texture" id=2]
-[ext_resource path="res://Tilesheet/Back1.png" type="Texture" id=3]
+[ext_resource path="res://pictures/buttons/Back1.png" type="Texture" id=2]
+[ext_resource path="res://pictures/buttons/graphics2.png" type="Texture" id=3]
 [ext_resource path="res://PICS/Icon (1).png" type="Texture" id=4]
-[ext_resource path="res://Tilesheet/Back3.png" type="Texture" id=5]
+[ext_resource path="res://pictures/buttons/graphics.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Settings.gd" type="Script" id=6]
 [ext_resource path="res://MorosNew.png" type="Texture" id=7]
+[ext_resource path="res://pictures/buttons/graphics3.png" type="Texture" id=8]
+[ext_resource path="res://pictures/buttons/Back2.png" type="Texture" id=9]
+[ext_resource path="res://pictures/buttons/Back3.png" type="Texture" id=10]
 
 [node name="Control" type="Control" groups=[
 "Persist",
@@ -33,26 +36,33 @@ texture = ExtResource( 1 )
 position = Vector2( 958.621, 544.9 )
 current = true
 
-[node name="Label" type="Label" parent="."]
-margin_top = 14.2544
-margin_right = 40.0
-margin_bottom = 28.2544
-text = "v0.0.7"
-
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( 375.411, 225.645 )
 scale = Vector2( 1.05944, 0.880193 )
 texture = ExtResource( 7 )
 
+[node name="Graphics" type="TextureButton" parent="."]
+margin_left = 2.224
+margin_top = 570.235
+margin_right = 462.224
+margin_bottom = 639.235
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Back" type="TextureButton" parent="."]
-margin_left = -17.685
-margin_top = 792.936
-margin_right = 172.315
-margin_bottom = 891.936
-rect_scale = Vector2( 3, 3 )
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 2 )
+margin_left = 2.22449
+margin_top = 919.468
+margin_right = 462.224
+margin_bottom = 988.468
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

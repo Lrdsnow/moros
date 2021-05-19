@@ -1,6 +1,6 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=96 format=2]
 
-[ext_resource path="res://scenes/Room_02_anim.gd" type="Script" id=1]
+[ext_resource path="res://entities/pile of tacks.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/RadMatt.3DFPP/Test_Objects/door/Door.gd" type="Script" id=2]
 [ext_resource path="res://materials/wooden_floor/wooden_floor_d.jpg" type="Texture" id=3]
 [ext_resource path="res://entities/light_switch/Mat.material" type="Material" id=4]
@@ -12,7 +12,8 @@
 [ext_resource path="res://materials/wooden_floor/wooden_floor_n.jpg" type="Texture" id=10]
 [ext_resource path="res://entities/room_01/room_01.obj" type="ArrayMesh" id=11]
 [ext_resource path="res://entities/stairs.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Room_02_ANIM_Camera.gd" type="Script" id=13]
+[ext_resource path="res://scenes/anim.gd" type="Script" id=13]
+[ext_resource path="res://scenes/playanim.gd" type="Script" id=14]
 [ext_resource path="res://entities/Ceiling_Lamp/ceiling_lamp.obj" type="ArrayMesh" id=21]
 
 [sub_resource type="Environment" id=1]
@@ -670,59 +671,85 @@ data = PoolVector3Array( 0.5293, 0.3914, 1, -0.5293, -0.3914, 1, -0.5293, 0.3914
 
 [sub_resource type="CubeMesh" id=74]
 
-[sub_resource type="Animation" id=75]
-resource_name = "ANIM"
-length = 1.5
+[sub_resource type="CapsuleMesh" id=75]
+radius = 0.6
+mid_height = 2.0
+
+[sub_resource type="SpatialMaterial" id=76]
+metallic_specular = 0.4
+
+[sub_resource type="CapsuleMesh" id=77]
+
+[sub_resource type="CapsuleMesh" id=78]
+
+[sub_resource type="Animation" id=79]
+resource_name = "fall"
+length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:translation")
+tracks/0/path = NodePath("../light_3:light_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0.3156, 7.11978, -10.6826 ), Vector3( 0.135455, 6.9802, -10.6826 ), Vector3( -0.42405, 6.61571, -10.6826 ), Vector3( -0.938537, 6.23869, -10.6826 ), Vector3( -1.02553, 5.90241, -10.6826 ) ]
+"values": [ Color( 0.101961, 0, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/path = NodePath("../light_3:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, -94.792, 0 ), Vector3( 17.3881, -95.022, -1.50431 ), Vector3( 31.1355, -95.6009, -2.90278 ), Vector3( 52.0388, -96.2394, -4.92972 ), Vector3( 83.2417, -124.617, -34.4338 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../light_3:visible")
+tracks/2/path = NodePath("..:translation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.9, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.48477, 7.07239, -10.6369 ), Vector3( 1.01867, 6.34826, -10.6369 ), Vector3( 1.01867, 6.34826, -10.6369 ), Vector3( 1.01867, 6.34826, -10.6369 ), Vector3( 1.01867, 6.34826, -10.6369 ), Vector3( 0.555634, 6.34826, -10.6369 ), Vector3( 0.0618535, 6.34826, -10.6369 ), Vector3( -0.333365, 5.70367, -10.6369 ), Vector3( -0.333365, 4.93684, -10.6369 ), Vector3( -0.22149, 4.37026, -10.6369 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../light_3:light_color")
+tracks/3/path = NodePath("..:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.8, 1, 1.2, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.9, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0, 0, 1 ), Color( 0.101961, 0, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0.101961, 0, 1, 1 ) ]
+"values": [ Vector3( -4.58533e-09, -5.79442e-11, 0.724 ), Vector3( -4.58533e-09, -5.79442e-11, 0.724 ), Vector3( -4.58533e-09, -5.79442e-11, 0.724 ), Vector3( -4.58533e-09, -5.79442e-11, 0.724 ), Vector3( -4.58533e-09, -5.79442e-11, 0.724 ), Vector3( -4.26612e-09, -1.68193e-09, 21.517 ), Vector3( -3.52742e-09, -2.93018e-09, 39.716 ), Vector3( -2.33562e-09, -3.94633e-09, 59.381 ), Vector3( -1.76078e-11, -4.58567e-09, 89.78 ), Vector3( 2.26646e-09, -3.98645e-09, 119.62 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Camera:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.9, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -87.168, 0 ), Vector3( 0, -87.168, 0 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ), Vector3( -60.3726, -84.2641, -4.99003 ) ]
 }
 
+[sub_resource type="SphereMesh" id=80]
+
 [node name="Room_01" type="Node"]
+script = ExtResource( 13 )
 
 [node name="world" type="Node" parent="."]
 
@@ -1110,30 +1137,71 @@ material/0 = null
 [node name="stairs" parent="." instance=ExtResource( 12 )]
 transform = Transform( -0.999902, 0, -0.0139621, 0, 1, 0, 0.0139621, 0, -0.999902, -0.808294, 0, -6.19199 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( -0.00643081, -0.995278, -0.096848, -0.0665434, 0.0970612, -0.993052, 0.997763, 5.8502e-05, -0.0668534, -1.02553, 5.90241, -10.6826 )
-current = true
-script = ExtResource( 13 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -0.494245, -0.869322, -6.95767e-11, 0.869322, -0.494245, -3.95572e-11, 0, -8.00355e-11, 1, -0.22149, 4.37026, -10.6369 )
 
-[node name="Item_Holder" type="Spatial" parent="Camera"]
+[node name="player" type="StaticBody" parent="MeshInstance"]
+transform = Transform( 1, -9.11134e-29, 0, 0, 1, 0, -1.0842e-19, 6.93889e-18, 1, -1.0333, -6.37458, 10.5574 )
+
+[node name="Capsule" type="MeshInstance" parent="MeshInstance/player"]
+transform = Transform( 0.0494076, 0.46095, 2.01488e-08, 0, -2.46325e-08, 0.563525, 0.998779, -0.0228023, -9.96719e-10, 1.03256, 6.44249, -10.4836 )
+mesh = SubResource( 75 )
+software_skinning_transform_normals = false
+material/0 = SubResource( 76 )
+
+[node name="Capsule3" type="MeshInstance" parent="MeshInstance/player"]
+transform = Transform( 0.00929273, 0.144851, 6.33162e-09, 0, -1.81006e-08, 0.414094, 0.187853, -0.00716548, -3.13212e-10, 1.06108, 6.58275, -9.91132 )
+cast_shadow = 3
+mesh = SubResource( 77 )
+material/0 = SubResource( 76 )
+
+[node name="Capsule4" type="MeshInstance" parent="MeshInstance/player"]
+transform = Transform( 0.0148126, 0.184923, 8.08323e-09, 0, -2.97335e-08, 0.680222, 0.299438, -0.00914776, -3.99861e-10, 1.04713, 5.68853, -10.1933 )
+cast_shadow = 3
+mesh = SubResource( 78 )
+material/0 = SubResource( 76 )
+
+[node name="Capsule6" type="MeshInstance" parent="MeshInstance/player"]
+transform = Transform( 0.00929273, 0.144851, 6.33162e-09, 0, -1.75744e-08, 0.402055, 0.187853, -0.00716548, -3.13212e-10, 1.00458, 6.58275, -11.0534 )
+cast_shadow = 3
+mesh = SubResource( 77 )
+material/0 = SubResource( 76 )
+
+[node name="Capsule5" type="MeshInstance" parent="MeshInstance/player"]
+transform = Transform( 0.0148126, 0.205313, 8.97449e-09, 0, -2.97335e-08, 0.680222, 0.299438, -0.0101564, -4.4395e-10, 1.01896, 5.68853, -10.7628 )
+cast_shadow = 3
+mesh = SubResource( 78 )
+material/0 = SubResource( 76 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshInstance/player"]
+anims/fall = SubResource( 79 )
+script = ExtResource( 14 )
+
+[node name="Camera" type="Camera" parent="MeshInstance/player"]
+transform = Transform( 0.0243324, 0.870321, -0.491883, -0.0430005, 0.492484, 0.869259, 0.998779, 3.72529e-08, 0.0494076, 1.03256, 7.20202, -10.4836 )
+current = true
+
+[node name="Item_Holder" type="Spatial" parent="MeshInstance/player/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.584962, -0.714723, -1.12066 )
 
-[node name="look_at" type="Position3D" parent="Camera"]
+[node name="look_at" type="Position3D" parent="MeshInstance/player/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.3193 )
 
-[node name="pickup_pos" type="Position3D" parent="Camera"]
+[node name="pickup_pos" type="Position3D" parent="MeshInstance/player/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.10606 )
 
-[node name="InteractionRay" type="RayCast" parent="Camera"]
+[node name="InteractionRay" type="RayCast" parent="MeshInstance/player/Camera"]
 enabled = true
 cast_to = Vector3( 0, 0, -5 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
-anims/ANIM = SubResource( 75 )
-script = ExtResource( 1 )
+[node name="Capsule2" type="MeshInstance" parent="MeshInstance/player/Camera"]
+transform = Transform( 0.708322, 0, -1.11022e-16, 0, -3.34589e-08, 0.765451, -3.72529e-09, -0.461514, -2.01734e-08, 0, 0.27086, 0 )
+mesh = SubResource( 80 )
+material/0 = SubResource( 76 )
 
 [node name="light_3" type="OmniLight" parent="."]
 transform = Transform( 0.0970472, 0.995139, -0.0167313, -0.995278, 0.0970616, 5.23964e-05, 0.00167611, 0.0166472, 0.99986, -0.135607, 6.08233, -7.63915 )
+visible = false
 light_color = Color( 0.101961, 0, 1, 1 )
 light_energy = 0.17
 shadow_enabled = true
@@ -1141,10 +1209,13 @@ shadow_bias = 0.14
 shadow_contact = 0.45
 omni_range = 11.5403
 
+[node name="pile of tacks" parent="." instance=ExtResource( 1 )]
+
+[connection signal="playanim" from="." to="MeshInstance/player/AnimationPlayer" method="_on_Room_01_playanim"]
 [connection signal="animation_finished" from="Door/Door/AnimationPlayer" to="Door/Door" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="Door/Door/AnimationPlayer" to="Door/Door" method="_on_AnimationPlayer_animation_started"]
 [connection signal="animation_finished" from="Bed/Bed/AnimationPlayer" to="Bed/Bed" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="Bed/Bed/AnimationPlayer" to="Bed/Bed" method="_on_AnimationPlayer_animation_started"]
 [connection signal="animation_finished" from="Desk/Desk/cupboard/slide/anim" to="Desk/Desk/cupboard/slide/cupboard_slide/top_drawer" method="_on_anim_animation_finished"]
 [connection signal="animation_finished" from="Desk/Desk/cupboard/slide_2/anim" to="Desk/Desk/cupboard/slide_2/cupboard_slide/bottom_drawer" method="_on_anim_animation_finished"]
-[connection signal="animation_finished" from="Camera/AnimationPlayer" to="Camera" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="MeshInstance/player/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

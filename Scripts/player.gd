@@ -27,6 +27,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if Input.is_action_just_pressed("jump"):
+		_animated_sprite.play("JumpL")
 		if is_on_floor():
 			velocity.y = jump_speed
 			
@@ -35,16 +36,19 @@ export (float, 0, 1.0) var acceleration = 0.25
 
 func get_input(delta):
 	var dir = 0
+	var andir = 1
 	if Input.is_action_pressed("pause"):
 		emit_signal('pause')
 	if Input.is_action_pressed("run"):
 		speed = 700
 	if Input.is_action_pressed("ui_right"):
 		dir += 1
-		_animated_sprite.play("StillL")
+		_animated_sprite.play("WalkingR")
+		andir = 2
 	if Input.is_action_pressed("ui_left"):
 		dir -= 1
-		_animated_sprite.play("StillR")
+		_animated_sprite.play("WalkingL")
+		andir = 1
 	if dir != 0:
 		velocity.x = lerp(velocity.x, dir * speed, acceleration)
 	else:
@@ -125,3 +129,9 @@ func _on_Area2D3_area_entered(area):
 func _on_Area2D8_area_entered(area):
 	gravity = 5500
 	jump_speed = -1500
+
+
+func _on_Portal_area_entered(area):
+	var cs = "res://scenes/Dialog/1.tscn"
+	# warning-ignore:return_value_discarded
+	get_tree().change_scene(cs)

@@ -190,9 +190,9 @@
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Placeholder",
+"name": "WalkingL",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -202,12 +202,7 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "WalkingL",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "StillR",
+"name": "StillL",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -217,12 +212,17 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "WalkingR",
+"name": "StillR",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Placeholder",
 "speed": 5.0
 }, {
 "frames": [  ],
 "loop": true,
-"name": "StillL",
+"name": "WalkingR",
 "speed": 5.0
 } ]
 
@@ -400,6 +400,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2( 265.608, 2829.5 )
 shape = SubResource( 10 )
+
 [connection signal="area_entered" from="Dead" to="player" method="_on_Dead_area_entered"]
 [connection signal="area_entered" from="Dead2" to="player" method="_on_Dead2_area_entered"]
 [connection signal="area_entered" from="Dead3" to="player" method="_on_Dead3_area_entered"]

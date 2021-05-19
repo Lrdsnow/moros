@@ -1,6 +1,5 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://addons/RadMatt.3DFPP/BBPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/RadMatt.3DFPP/Test_Objects/door/Door.gd" type="Script" id=2]
 [ext_resource path="res://materials/wooden_floor/wooden_floor_d.jpg" type="Texture" id=3]
 [ext_resource path="res://entities/light_switch/Mat.material" type="Material" id=4]
@@ -551,9 +550,6 @@ shape = SubResource( 42 )
 transform = Transform( 1, 0, 0, 0, 1.65651, 0, 0, 0, 0.775057, -6.93504, 1.79886, -2.18868 )
 mesh = SubResource( 43 )
 material/0 = null
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01211, 2.15285, 7.96151 )
 
 [connection signal="animation_finished" from="Door/Door/AnimationPlayer" to="Door/Door" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_started" from="Door/Door/AnimationPlayer" to="Door/Door" method="_on_AnimationPlayer_animation_started"]

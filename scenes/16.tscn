@@ -132,7 +132,12 @@ extents = Vector2( 1.51067, 3.55769 )
 animations = [ {
 "frames": [  ],
 "loop": true,
-"name": "StillL",
+"name": "JumpL",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "WalkingL",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -147,12 +152,7 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "WalkingL",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "JumpR",
+"name": "StillL",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -162,7 +162,7 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
-"name": "JumpL",
+"name": "JumpR",
 "speed": 5.0
 } ]
 
