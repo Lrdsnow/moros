@@ -1,0 +1,128 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://entities/Ocean.tscn" type="PackedScene" id=1]
+[ext_resource path="res://materials/sand.jpeg" type="Texture" id=2]
+[ext_resource path="res://materials/sand.tres" type="Material" id=3]
+[ext_resource path="res://materials/tree.tres" type="Material" id=4]
+
+[sub_resource type="ProceduralSky" id=1]
+ground_bottom_color = Color( 0.309804, 0.407843, 0.501961, 1 )
+ground_horizon_color = Color( 0.258824, 0.333333, 0.4, 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+ambient_light_color = Color( 0.643137, 0.643137, 0.643137, 1 )
+ambient_light_sky_contribution = 0.0
+fog_sun_color = Color( 1, 0.666667, 0, 1 )
+dof_blur_far_enabled = true
+dof_blur_far_distance = 177.17
+dof_blur_far_transition = 87.55
+glow_enabled = true
+glow_intensity = 0.47
+glow_strength = 1.35
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.945098, 0.941176, 0.737255, 1 )
+albedo_texture = ExtResource( 2 )
+metallic_specular = 0.0
+roughness_texture = ExtResource( 2 )
+roughness_texture_channel = 4
+
+[sub_resource type="CapsuleMesh" id=4]
+material = SubResource( 3 )
+radius = 0.5
+
+[sub_resource type="Animation" id=5]
+resource_name = "sway"
+
+[sub_resource type="CylinderMesh" id=6]
+height = 4.0
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="CylinderMesh" id=8]
+
+[sub_resource type="PlaneMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.945098, 0.941176, 0.737255, 1 )
+albedo_texture = ExtResource( 2 )
+
+[node name="Landscape" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Ocean" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 0.88, 0, 0, 0, 3, 7.63738, 1.48703, -3.04091 )
+
+[node name="island" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.09662, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="island"]
+transform = Transform( -56.4171, 0, 0, 0, 11.6758, 0, 0, 0, -36.698, 0, 6.04288, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.968509, -0.0791459, 0.236063, 0, 0.94813, 0.317884, -0.248977, -0.307874, 0.918272, 4.88612, 23.4198, 40.8757 )
+near = 0.09
+far = 8192.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/sway = SubResource( 5 )
+
+[node name="sandcastle" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 1, 0, 0, 0, 8.19952, 0, 0, 0, 1, -8.28661, -2.46883, 6.10406 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 1, 0, 0, 0, 8.19952, 0, 0, 0, 1, 6.8829, -2.46883, 6.10406 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 1, 0, 0, 0, 8.19952, 0, 0, 0, 1, 6.8829, -2.46883, -8.07325 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 1, 0, 0, 0, 8.19952, 0, 0, 0, 1, -8.44065, -2.46883, -8.07325 )
+mesh = SubResource( 6 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 0.229331, 0, 0, 0, 5.96782, 0, 0, 0, 6.57179, -8.32718, 7.48804, -0.671329 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 0.229331, 0, 0, 0, 5.96782, 0, 0, 0, 6.57179, 7.18491, 7.48804, -0.671329 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="sandcastle"]
+transform = Transform( -1.12205e-08, 0, 7.35598, 0, 5.96782, 0, -0.229331, 0, -2.87262e-07, -0.785308, 7.48804, -8.09295 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="sandcastle"]
+transform = Transform( -1.12205e-08, 0, 7.35598, 0, 5.96782, 0, -0.229331, 0, -2.87262e-07, -0.785308, 7.48804, 6.19805 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 2.82323, 0, 0, 0, 0.0793402, -5.18854, 0, -0.353038, -1.16605, -0.785308, 7.80263, 6.46188 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 4 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="sandcastle"]
+transform = Transform( 6.73176, 0, 0, 0, 1, 0, 0, 0, 6.8105, -0.804543, 11.968, -1.47709 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="palm tree" type="Spatial" parent="."]

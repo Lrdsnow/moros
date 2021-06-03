@@ -8,6 +8,8 @@ signal playanim
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GameData.ep1path = 1
+	GameData.episode = 2
 	emit_signal("playanim")
 
 
@@ -17,4 +19,20 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	get_tree().change_scene("res://scenes/temp.tscn")
+	get_tree().change_scene("res://scenes/menu.tscn")
+
+func load_level():
+	var save_file = File.new()
+	if not save_file.file_exists("user://other.save"):
+		return
+	save_file.open("user://other.save", File.READ)
+	GameData.episode = int(save_file.get_line())
+	GameData.ep1path = int(save_file.get_line())
+	save_file.close()
+
+func save_level():
+	var save_file = File.new()
+	save_file.open("user://other.save", File.WRITE)
+	save_file.store_line(str(GameData.episode))
+	save_file.store_line(str(GameData.ep1path))
+	save_file.close()

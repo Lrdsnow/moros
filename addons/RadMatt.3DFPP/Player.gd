@@ -3,6 +3,8 @@ extends KinematicBody
 
 var lock = 0
 
+signal light
+
 func _ready():
 	if OS.has_feature('JavaScript'):
 		JavaScript.eval("canvas.requestPointerLock()")
@@ -378,6 +380,10 @@ func show_message(text, time):
 
 func _on_Area2_body_entered(body):
 	if body.name == "Player":
+		emit_signal("light")
+
+func norm_anim(body):
+	if body.name == "Player":
 		var cs = "res://scenes/Room_02.tscn"
 		get_tree().change_scene(cs)
 
@@ -389,8 +395,8 @@ func _on_Area3_body_entered(body):
 
 func _on_DOOR_body_entered(body):
 	if body.name == "Player":
-		var cs = "res://scenes/Room_02_anim.tscn"
-		get_tree().change_scene(cs)
+		$doortp.play_backwards("to-room01")
+		
 
 
 func _on_Room_01_saved():
@@ -415,3 +421,38 @@ func _on_DOORHorror_body_entered(body):
 func _on_AnimationPlayer_animation_started(anim_name):
 	hide()
 	lock = 1
+
+
+func _on_DoorBackToRoom_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_back2room_body_entered(body):
+	if body.name == "Player":
+		if not $doortp.is_playing():
+			$doortp.play("to-room01")
+
+
+func _on_Door_locked():
+	show_message("Its Locked.", 2)
+
+
+func _on_Door_lock():
+	show_message("Its Locked.", 2)
+
+
+func _on_back2hall_body_entered(body):
+	if body.name == "Player":
+		if not $doortp.is_playing():
+			$doortp.play("from-room1")
+
+
+func _on_hall_body_entered(body):
+	if body.name == "Player":
+		if not $doortp.is_playing():
+			$doortp.play_backwards("to-room01")
+
+
+func _on_Door_opened():
+	if not $doortp.is_playing():
+		$doortp.play_backwards("to-room01")

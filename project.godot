@@ -14,6 +14,7 @@ config/name="Moros"
 config/description="A Platfomer"
 run/main_scene="res://scenes/menu.tscn"
 boot_splash/image="res://splash2.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://128x128.png"
 config/windows_native_icon="res://moros.ico"
 
@@ -22,6 +23,11 @@ config/windows_native_icon="res://moros.ico"
 PlayerData="*res://Others/player_data.gd"
 GameData="*res://Others/GameData.gd"
 Settings="*res://Others/settings.gd"
+ggsManager="*res://addons/GGS/src/ggs_manager.gd"
+
+[debug]
+
+settings/fps/force_fps=30
 
 [display]
 
@@ -34,6 +40,10 @@ window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/ben/plugin.cfg", "res://addons/water2d/plugin.cfg" )
 
 [input]
 
@@ -207,13 +217,17 @@ flashlight={
 
 quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
+2d/options/use_nvidia_rect_flicker_workaround=true
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-quality/reflections/texture_array_reflections=false
-quality/reflections/high_quality_ggx=false
+vram_compression/import_pvrtc=true
+quality/depth_prepass/disable_for_vendors="PowerVR,Mali,Adreno"
+quality/filters/anisotropic_filter_level=1
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false
+quality/subsurface_scattering/quality=0
+quality/subsurface_scattering/scale=0
 quality/2d/use_pixel_snap=true

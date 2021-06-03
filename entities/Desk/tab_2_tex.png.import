@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.s3tc.stex"
 path.etc="res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.etc.stex"
+path.pvrtc="res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://entities/Desk/tab_2_tex.png"
-dest_files=[ "res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.s3tc.stex", "res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.etc.stex" ]
+dest_files=[ "res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.s3tc.stex", "res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.etc.stex", "res://.import/tab_2_tex.png-94db5db6bad2242c090fc379c402513c.pvrtc.stex" ]
 
 [params]
 
@@ -25,7 +26,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.s3tc.stex"
 path.etc="res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.etc.stex"
+path.pvrtc="res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pictures/dialog/horrortext1.png"
-dest_files=[ "res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.s3tc.stex", "res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.etc.stex" ]
+dest_files=[ "res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.s3tc.stex", "res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.etc.stex", "res://.import/horrortext1.png-ebf78ec0f62712fe3107c1a38d7427c5.pvrtc.stex" ]
 
 [params]
 
@@ -25,7 +26,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

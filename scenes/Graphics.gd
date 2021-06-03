@@ -22,3 +22,6 @@ func _on_VsyncOff_pressed():
 func _on_early_pressed():
 	var cs = "res://scenes/early.tscn"
 	get_tree().change_scene(cs)
+
+func main(oof):
+	pass

@@ -7,7 +7,11 @@ var ep1path = GameData.ep1path
 signal splash
 
 func _ready():
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if splash == 0:
+			var mobile = JavaScript.eval("if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {var mobile = true}", true)
+			if mobile == true:
+				get_tree().change_scene("res://scenes/mobile.tscn")
 			emit_signal("splash")
 			GameData.Fullscreen = 1
 		var save_game = File.new()
@@ -166,3 +170,6 @@ func _on_GBack_pressed():
 
 func _on_Graphics_pressed():
 	$AnimationPlayer.play("to-graphics")
+	
+func main(setting):
+	pass

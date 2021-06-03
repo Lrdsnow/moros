@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.s3tc.stex"
 path.etc="res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.etc.stex"
+path.pvrtc="res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://entities/Basketball/basketball-texture.jpg"
-dest_files=[ "res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.s3tc.stex", "res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.etc.stex" ]
+dest_files=[ "res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.s3tc.stex", "res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.etc.stex", "res://.import/basketball-texture.jpg-b3c6da1609ac0084a4434cf3299eaa84.pvrtc.stex" ]
 
 [params]
 

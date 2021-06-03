@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	var lev1 = "res://scenes/temp.tscn"
+	var lev1 = "res://scenes/menu.tscn"
 	get_tree().change_scene(lev1)

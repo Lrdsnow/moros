@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.s3tc.stex"
 path.etc="res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.etc.stex"
+path.pvrtc="res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://materials/wooden_floor/carpet.jpg"
-dest_files=[ "res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.s3tc.stex", "res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.etc.stex" ]
+dest_files=[ "res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.s3tc.stex", "res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.etc.stex", "res://.import/carpet.jpg-6f37671a89059f401e7c118f3ee1225f.pvrtc.stex" ]
 
 [params]
 

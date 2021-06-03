@@ -6,6 +6,7 @@ var animating = false
 const CLOSED = 0
 const OPEN = 1
 
+
 export var locked = false
 var state = CLOSED
 

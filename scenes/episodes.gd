@@ -8,6 +8,7 @@ var epsel = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$note.hide()
 	$play.disabled = true
 	$episode1.hide()
 
@@ -18,8 +19,8 @@ func _ready():
 
 
 func _on_ep1_pressed():
-	if GameData.ep1path == 2:
-		$episode1/note.show()
+	if GameData.ep1path <= 1:
+		$note.show()
 	if GameData.episode == 2:
 		$episode1/CheckBox.pressed = true
 	$play.disabled = false

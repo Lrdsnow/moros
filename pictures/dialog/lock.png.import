@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.s3tc.stex"
 path.etc="res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.etc.stex"
+path.pvrtc="res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pictures/dialog/lock.png"
-dest_files=[ "res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.s3tc.stex", "res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.etc.stex" ]
+dest_files=[ "res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.s3tc.stex", "res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.etc.stex", "res://.import/lock.png-ae9cac74533381c4c60262b3630e42d8.pvrtc.stex" ]
 
 [params]
 

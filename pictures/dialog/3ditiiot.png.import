@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.s3tc.stex"
 path.etc="res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.etc.stex"
+path.pvrtc="res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.pvrtc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc", "pvrtc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://pictures/dialog/3ditiiot.png"
-dest_files=[ "res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.s3tc.stex", "res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.etc.stex" ]
+dest_files=[ "res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.s3tc.stex", "res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.etc.stex", "res://.import/3ditiiot.png-6ecfdb2d3ce7f5fe60c9f5abe2507960.pvrtc.stex" ]
 
 [params]
 
