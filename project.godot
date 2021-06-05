@@ -23,7 +23,7 @@ config/windows_native_icon="res://moros.ico"
 PlayerData="*res://Others/player_data.gd"
 GameData="*res://Others/GameData.gd"
 Settings="*res://Others/settings.gd"
-ggsManager="*res://addons/GGS/src/ggs_manager.gd"
+Global="*res://Scripts/Global.gd"
 
 [debug]
 

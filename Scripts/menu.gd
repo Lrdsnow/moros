@@ -29,21 +29,26 @@ func _ready():
 		var _exit_pressed = $Exit.connect("pressed", self, "_on_exit_pressed")
 # When a Host button is pressed
 func _on_play_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("to-ep")
 
 	
 func _on_load_pressed():
+	Global.play_sound("MenuClicked")
 # warning-ignore:return_value_discarded
 	load_game()
 
 func _on_set_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("to-set")
 	
 func _on_extras_pressed():
+	Global.play_sound("MenuClicked")
 # warning-ignore:return_value_discarded
 	$AnimationPlayer.play("to-extras")
 	
 func _on_exit_pressed():
+	Global.play_sound("MenuClicked")
 	if OS.has_feature('JavaScript'):
 		get_tree().change_scene("res://scenes/blank.tscn")
 	else:
@@ -129,6 +134,7 @@ func load_game_saves():
 
 
 func _on_back_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("to-menu")
 
 
@@ -150,10 +156,12 @@ func save_level():
 
 
 func _on_Back_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("back-set")
 
 
 func _on_delsave_pressed():
+	Global.play_sound("MenuClicked")
 	var dir = Directory.new()
 	dir.remove("user://savegame.save")
 	dir.remove("user://other.save")
@@ -161,14 +169,17 @@ func _on_delsave_pressed():
 
 
 func _on_back2_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("back-extras")
 
 
 func _on_GBack_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("back-graphics")
 
 
 func _on_Graphics_pressed():
+	Global.play_sound("MenuClicked")
 	$AnimationPlayer.play("to-graphics")
 	
 func main(setting):

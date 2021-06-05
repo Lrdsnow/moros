@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://PICS/Icon.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/menu.gd" type="Script" id=2]
@@ -58,6 +58,8 @@
 [ext_resource path="res://pictures/buttons/VsyncOff.png" type="Texture" id=56]
 [ext_resource path="res://pictures/buttons/VsyncOn3.png" type="Texture" id=57]
 [ext_resource path="res://pictures/backgrounds/white.png" type="Texture" id=58]
+[ext_resource path="res://sound/Menu_Select_00.wav" type="AudioStream" id=59]
+[ext_resource path="res://sound/SoundController.gd" type="Script" id=60]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade"
@@ -672,6 +674,12 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -1936.03, 9.51379 )
 scale = Vector2( 30.2842, 17.0543 )
 texture = ExtResource( 58 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 60 )
+
+[node name="MenuClicked" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 59 )
 
 [connection signal="pressed" from="settings/Graphics" to="." method="_on_Graphics_pressed"]
 [connection signal="pressed" from="settings/delsave" to="." method="_on_delsave_pressed"]
