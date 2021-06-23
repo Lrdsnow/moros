@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-ba6141472526d020e72ec2b18a7f49b1.stex"
+path="res://.import/appstore.png-b2ea1411531686c651f22185b0bfdf04.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/icon.png"
-dest_files=[ "res://.import/icon.png-ba6141472526d020e72ec2b18a7f49b1.stex" ]
+source_file="res://src/moros/appstore.png"
+dest_files=[ "res://.import/appstore.png-b2ea1411531686c651f22185b0bfdf04.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-ba6141472526d020e72ec2b18a7f49b1.stex"
+path="res://.import/moros(120x120).jpg-b99fe58b3dbd2027548f2cecffe4fb3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/icon.png"
-dest_files=[ "res://.import/icon.png-ba6141472526d020e72ec2b18a7f49b1.stex" ]
+source_file="res://src/moros/moros(120x120).jpg"
+dest_files=[ "res://.import/moros(120x120).jpg-b99fe58b3dbd2027548f2cecffe4fb3c.stex" ]
 
 [params]
 
