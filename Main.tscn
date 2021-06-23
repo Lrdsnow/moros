@@ -317,6 +317,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="web" type="HTTPRequest" parent="."]
+
 [connection signal="gui_input" from="TitleBar" to="." method="_on_TitleBar_gui_input"]
 [connection signal="pressed" from="TitleBar/CloseButton" to="." method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="TitleBar/MinimizeButton" to="." method="_on_MinimizeButton_pressed"]

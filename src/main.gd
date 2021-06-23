@@ -2,6 +2,7 @@ extends Control
 
 var following = false
 var dragging_start_position = Vector2()
+onready var download_file = ""
 
 func _ready():
 	if OS.get_name() == "Linux":
@@ -74,3 +75,11 @@ func _on_moros_pressed():
 	$usr.show()
 	$img.show()
 	$opt.hide()
+	
+
+func download(url : String, target : String):
+	download_file = target # where to save the downloaded file
+	$web.request(url) # start the download
+
+func checkupdate():
+	download("", "temp")
