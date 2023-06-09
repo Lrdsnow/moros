@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddiu2mjixurn8"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jqd4l"]
+[ext_resource type="PackedScene" uid="uid://b71cqdq82h3mm" path="res://src/levels/level0/main.tscn" id="2_osaoi"]
+
+[sub_resource type="FontVariation" id="FontVariation_1e77b"]
+variation_embolden = 1.5
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jqd4l")
+main = ExtResource("2_osaoi")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.33179
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.607843, 0.741176, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_1e77b")
+theme_override_font_sizes/font_size = 100
+text = "Moros"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="play" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     Play     "
+
+[node name="exit" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "     Exit     "
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]
