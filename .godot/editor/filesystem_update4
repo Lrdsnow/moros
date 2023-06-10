@@ -1,0 +1,5 @@
+res://main.tscn
+res://src/levels/level0/main.tscn
+res://autoload.tscn
+res://src/other/player.gd
+res://src/other/player.tscn

@@ -21,6 +21,10 @@ config/icon="res://icon.svg"
 
 Global="*res://autoload.tscn"
 
+[display]
+
+window/vsync/vsync_mode=2
+
 [input]
 
 ui_left={
