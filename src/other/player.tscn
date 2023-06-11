@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://begsprcj5agg1"]
+[gd_scene load_steps=10 format=3 uid="uid://begsprcj5agg1"]
 
 [ext_resource type="Texture2D" uid="uid://chalolmgq37t" path="res://src/resources/player.png" id="1_ckxok"]
 [ext_resource type="Script" path="res://src/other/player.gd" id="2_bvquo"]
@@ -48,12 +48,15 @@ animations = [{
 radius = 27.0
 height = 106.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wr8hl"]
+polygon = PackedVector2Array(-1, -1, -24, -44, -20, -48, -9, -48, 8, -48, 20, -48, 24, -44, 24, -8, 16, 0, 24, 0, 24, 4, 28, 4, 28, 40, 16, 40, 16, 48, 20, 48, 20, 52, 24, 52, 24, 60, 20, 60, 20, 63, 4, 64, 4, 60, 0, 60, 0, 65, -16, 64, -16, 60, -20, 60, -20, 40, -27, 40, -28, 36, -32, 37, -32, 4, -28, 4, -28, 0, -12, 0, -12, -4, -20, -4, -20, -8, -24, -8, -24, -44)
+
 [node name="player" type="CharacterBody2D"]
 floor_stop_on_slope = false
 floor_max_angle = 0.349066
 script = ExtResource("2_bvquo")
 speed = 700
-jump_speed = -1100
+jump_speed = -1300
 
 [node name="tex" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fyo10")
@@ -66,3 +69,7 @@ shape = SubResource("CapsuleShape2D_drquh")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -150)
 position_smoothing_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+rotation = -0.000963234
+occluder = SubResource("OccluderPolygon2D_wr8hl")

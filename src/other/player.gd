@@ -12,22 +12,16 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
-		if event.is_action_pressed("jump"):
-			pass
-		elif event.is_action_pressed("ui_left"):
-			$tex.flip_h=true
+		if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
+			$tex.flip_h=event.is_action_pressed("ui_left")
 			$tex.play("walking")
-		elif event.is_action_pressed("ui_right"):
-			$tex.flip_h=false
-			$tex.play("walking")
-		elif event.is_action_released("ui_left") or event.is_action_released("ui_right"):
-			$tex.stop()
+		else:
 			$tex.play("idle")
 
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
-	if not $tex.animation == "idle":
+	if not Input.get_axis("ui_left", "ui_right") == 0:
 		velocity.x = Input.get_axis("ui_left", "ui_right") * speed
 	else:
 		velocity.x = 0
